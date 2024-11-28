@@ -9,7 +9,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @ActiveProfiles("kebab")
 @JsonTest
-public class BeerDtoKebabTest extends BeerDtoTest {
+public class BeerDtoKebabTest extends BaseTest {
 
     @Autowired
     ObjectMapper mapper;
@@ -18,7 +18,7 @@ public class BeerDtoKebabTest extends BeerDtoTest {
     void testKebab() throws JsonProcessingException {
         BeerDto dto = getDto();
 
-        String json = objectMapper.writeValueAsString(dto);
+        String json = mapper.writeValueAsString(dto);
 
         System.out.println(json);
     }
